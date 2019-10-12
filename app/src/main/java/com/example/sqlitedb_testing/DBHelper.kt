@@ -33,6 +33,8 @@ class DBHelper(context: Context):SQLiteOpenHelper(context,DATABASE_NAME,null,DAT
 
         var result: Long = db.insert(TABLE_NAME,null,values)
 
+        //db.execSQL("delete from "+ TABLE_NAME);
+
         return !result.equals(-1)
 
 

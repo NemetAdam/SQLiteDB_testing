@@ -14,7 +14,6 @@
         android:layout_marginEnd="10dp"
         android:text="View Hobbies"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/list_hobbies"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText" />
 
@@ -56,21 +55,8 @@
         android:layout_marginEnd="60dp"
         android:text="Add Hobby"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/list_hobbies"
         app:layout_constraintEnd_toStartOf="@+id/buttonView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText" />
-
-    <ListView
-        android:id="@+id/list_hobbies"
-        android:layout_width="409dp"
-        android:layout_height="225dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="1dp"
-        android:clickable="false"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonAdd" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

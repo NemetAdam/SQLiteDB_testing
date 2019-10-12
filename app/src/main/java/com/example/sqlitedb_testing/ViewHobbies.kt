@@ -6,22 +6,15 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class ViewHobbies : AppCompatActivity() {
 
-    internal lateinit var db: DBHelper
-    internal var firstHobby:List<Hobby> = ArrayList<Hobby>()
+    internal lateinit var myDB: DBHelper
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_view_hobbies)
 
-        db = DBHelper(context = this)
-        refreshData()
 
-    }
-
-    private fun refreshData() {
-        firstHobby = db.AllHobby
-        val adapter = ListHobbyAdapter(this,firstHobby,editText)
-        list_hobbies.adapter = adapter
 
     }
 }
+

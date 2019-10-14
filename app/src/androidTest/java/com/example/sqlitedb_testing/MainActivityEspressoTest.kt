@@ -19,7 +19,6 @@ class MainActivityEspressoTest {
     @JvmField var activityTestRule = ActivityTestRule(MainActivity::class.java)
 
 
-
     @Test
     fun testRandomNumberInput(){
         Espresso.onView(ViewMatchers.withId(R.id.editText)).perform(ViewActions.typeText(Random().nextInt().toString()))

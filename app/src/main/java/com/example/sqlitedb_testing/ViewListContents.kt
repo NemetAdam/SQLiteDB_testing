@@ -20,7 +20,7 @@ class ViewListContents: AppCompatActivity() {
         setContentView(R.layout.activity_view_hobbies)
 
         var list = this.findViewById<ListView>(R.id.listView)
-        myDB = DBHelper(this);
+        myDB = DBHelper(this)
 
         val theList = ArrayList<String?>()
         val data = myDB.getListContents()
@@ -28,9 +28,13 @@ class ViewListContents: AppCompatActivity() {
             Toast.makeText(this, "There are no contents in this list!", Toast.LENGTH_LONG).show()
         } else {
             while (data.moveToNext()) {
-                theList.add(data.getString(1))
+              theList.add("Name: " + data.getString(1)+ "\nSurname: " + data.getString(2) + "\nInfo: " + data.getString(3) + "\nHobby: " +data.getString(4))
+      //          theList.add(data.getString(1))
+//               theList.add(data.getString(3))
+//                theList.add(data.getString(4))
                 val listAdapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, theList)
                 list.adapter = listAdapter
+                Toast.makeText(this, data.count.toString()+"ROWWWSSSSS", Toast.LENGTH_LONG).show()
             }
         }
 

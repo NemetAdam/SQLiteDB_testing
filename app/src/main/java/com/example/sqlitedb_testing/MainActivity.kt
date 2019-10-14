@@ -26,9 +26,12 @@ class MainActivity : AppCompatActivity() {
 
         myDB = DBHelper(this);
         buttonAdd.setOnClickListener(){
-            val newEntry = editText.text.toString()
+            val newName:String = editTextFirstName.text.toString()
+            val newSecondName:String = editTextSecondName.text.toString()
+            val info:String = editText4.text.toString()
+            val newHobby = editText.text.toString()
             if (editText.length() !== 0) {
-                AddData(newEntry)
+                AddData(newName,newSecondName,info,newHobby)
                 editText.setText("")
             } else {
                 Toast.makeText(
@@ -48,9 +51,9 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun AddData(newEntry: String) {
+    fun AddData(newEntry1: String,newEntry2: String,newEntry3: String,newEntry4: String) {
 
-        val insertData = myDB.addData(newEntry)
+        val insertData = myDB.addData(newEntry1,newEntry2,newEntry3,newEntry4)
 
         if (insertData == true) {
             Toast.makeText(this, "Data Successfully Inserted!", Toast.LENGTH_LONG).show()
